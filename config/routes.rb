@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  
+  get 'static_pages/help'
   #devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'application#hello'
+  root to: 'static_pages#home'
 
   #devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret',
