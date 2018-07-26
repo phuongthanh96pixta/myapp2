@@ -21,6 +21,8 @@ gem "oauth2"
 
 gem "omniauth-oauth2"
 
+gem 'bootstrap-sass', '3.3.7'
+
 #gem 'omniauth-mystrategy', :path => '~/full-path-to-the-omniauth-folder/'
 
 gem "rails-controller-testing"
