@@ -4,17 +4,11 @@ Rails.application.routes.draw do
   get  '/signup',  to: 'devise/registrations#new'
   post '/signup',  to: 'devise/registrations#create'
   get '/signout',  to: 'devise/registrations#destroy'
+  get '/user',    to: 'users#show'
+  get '/users',    to: 'users#index'
 
-  #devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
-  #devise_for :users, controllers: { sessions: 'users/sessions' }
+  
   devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret',
     confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
-
-  devise_scope :user do
-    get '/user',    to: 'users/sessions#show'
-    get '/users',    to: 'users/sessions#index'
-  end
-
-  #devise_for :users, skip: :all
 end

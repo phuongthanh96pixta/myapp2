@@ -2,14 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  def index
-    @users = User.paginate(page: params[:page])
-  end
-
-  def show
-    @user = current_user
-  end
-
+  
   # GET /resource/sign_in
   # def new
   #   super
