@@ -6,8 +6,11 @@
     <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
     sample application.
   </h2>
-
-  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+  <% if !user_signed_in? %>
+    <li>
+      <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+    </li>
+  <% end %>
 </div>
 
 

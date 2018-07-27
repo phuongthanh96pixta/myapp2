@@ -3,11 +3,11 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
   def index
-    #@user = User.find(params[:id])
+    @users = User.paginate(page: params[:page])
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # GET /resource/sign_in
